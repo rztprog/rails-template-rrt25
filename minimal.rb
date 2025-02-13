@@ -158,10 +158,15 @@ after_bundle do
   
   # Final message
   ########################################
-  puts "************************************************************"
-  puts "     🎉 RRT25 Configuration is complete! 🎉"
-  puts "     To start the server and Tailwind watcher, run:"
-  puts "         foreman start or bin/dev"
-  puts "     Enjoy building your app! 🚀"
-  puts "************************************************************"
+  puts "*************************************"
+  puts " "
+  puts " "
+  puts "   🎉 RRT25 Configuration is complete! 🎉"
+  puts " "
+  puts "   To start the server and Tailwind watcher, run:"
+  puts "          foreman start or bin/dev"
+  puts " "
+  puts "          Enjoy building your app! 🚀"
+  puts " "
+  puts "*************************************"
 end
