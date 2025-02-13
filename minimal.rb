@@ -17,6 +17,7 @@ inject_into_file "Gemfile", before: "group :development, :test do" do
     gem "font-awesome-sass"
     gem "autoprefixer-rails"
     gem "tailwindcss-rails"
+    gem "cssbundling-rails"
 
     # Dev
     gem "hotwire-livereload"
@@ -96,6 +97,11 @@ after_bundle do
   run "rails css:install:tailwind"
   run "rails livereload:install && rails livereload:enable"
 
+  # Procfile
+  ########################################
+  # Ajouter la configuration du Procfile pour Foreman
+  run "echo 'web: bin/rails server -b 0.0.0.0 -p 3000' > Procfile"
+  run "echo 'css: bin/rails tailwindcss:watch' >> Procfile"
 
   # Routes
   ########################################
@@ -142,12 +148,6 @@ after_bundle do
   # Dotenv
   ########################################
   run "touch '.env'"
-
-  # Procfile
-  ########################################
-  # Ajouter la configuration du Procfile pour Foreman
-  run "echo 'web: bin/rails server -b 0.0.0.0 -p 3000' > Procfile"
-  run "echo 'css: bin/rails tailwindcss:watch' >> Procfile"
 
   # Rubocop
   ########################################
