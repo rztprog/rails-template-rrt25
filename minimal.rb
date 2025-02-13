@@ -37,8 +37,8 @@ end
 run "rm -rf app/assets/stylesheets"
 run "rm -rf vendor"
 run "curl -L https://github.com/rztprog/rails-template-rrt25/raw/refs/heads/main/rails-rrt25-stylesheets-master.zip > stylesheets.zip"
-run "unzip stylesheets.zip -d app/assets && rm -f stylesheets.zip && rm -f app/assets/rails-stylesheets-master/README.md"
-run "mv app/assets/rails-stylesheets-master app/assets/stylesheets"
+run "unzip stylesheets.zip -d app/assets && rm -f stylesheets.zip && rm -f app/assets/rails-rrt25-stylesheets-master/README.md"
+run "mv app/assets/rails-rrt25-stylesheets-master app/assets/stylesheets"
 
 # Layout
 ########################################
