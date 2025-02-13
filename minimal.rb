@@ -24,6 +24,7 @@ inject_into_file "Gemfile", before: "group :development, :test do" do
 
     # Tools
     gem 'faker'
+
   RUBY
 end
 
@@ -89,6 +90,7 @@ after_bundle do
 
   # Bundling
   ########################################
+  run "touch 'Procfile'"
   run "bundle add cssbundling-rails"
   run "bundle install"
   run "rails css:install:tailwind"
