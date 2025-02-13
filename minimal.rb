@@ -89,16 +89,17 @@ after_bundle do
 
   # Bundling
   ########################################
-  run "touch 'Procfile'"
   run "bundle add cssbundling-rails"
   run "bundle install"
   run "rails css:install:tailwind"
 
   # Procfile
   ########################################
-  # Ajouter la configuration du Procfile pour Foreman
-  run "echo 'web: bin/rails server -b 0.0.0.0 -p 3000' > Procfile"
-  run "echo 'css: bin/rails tailwindcss:watch' >> Procfile"
+  # Add Procfile configuration for Foreman
+  run "rm -rf 'Procfile.dev'"
+  run "touch 'Procfile.dev'"
+  run "echo 'web: bin/rails server -b 0.0.0.0 -p 3000' > Procfile.dev"
+  run "echo 'css: bin/rails tailwindcss:watch' >> Procfile.dev"
 
   # Routes
   ########################################
