@@ -141,6 +141,12 @@ after_bundle do
   ########################################
   run "touch '.env'"
 
+  # Procfile
+  ########################################
+  # Ajouter la configuration du Procfile pour Foreman
+  run "echo 'web: bin/rails server -b 0.0.0.0 -p 3000' > Procfile"
+  run "echo 'css: bin/rails tailwindcss:watch' >> Procfile"
+
   # Rubocop
   ########################################
   # run "curl -L https://raw.githubusercontent.com/lewagon/rails-templates/master/.rubocop.yml > .rubocop.yml"
@@ -150,4 +156,13 @@ after_bundle do
   git :init
   git add: "."
   git commit: "-m 'Initial commit with rztprog rails template 2025 - rrt25'"
+  
+  # Final message
+  ########################################
+  puts "************************************************************"
+  puts "     🎉 RRT25 Configuration is complete! 🎉"
+  puts "     To start the server and Tailwind watcher, run:"
+  puts "         foreman start or bin/dev"
+  puts "     Enjoy building your app! 🚀"
+  puts "************************************************************"
 end
