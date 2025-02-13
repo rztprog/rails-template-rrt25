@@ -13,8 +13,6 @@ run "if uname | grep -q 'Darwin'; then pgrep spring | xargs kill -9; fi"
 inject_into_file "Gemfile", before: "group :development, :test do" do
   <<~RUBY
     # Style
-    gem "sassc-rails"
-    gem "font-awesome-sass"
     gem "autoprefixer-rails"
     gem "tailwindcss-rails"
     gem "cssbundling-rails"
