@@ -93,7 +93,7 @@ after_bundle do
   run "bundle add cssbundling-rails"
   run "bundle install"
   run "rails css:install:tailwind"
-  run "rails livereload:install && rails livereload:enable"
+  # run "rails livereload:enable"
 
   # Procfile
   ########################################
