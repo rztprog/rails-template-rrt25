@@ -14,8 +14,9 @@ inject_into_file "Gemfile", before: "group :development, :test do" do
   <<~RUBY
     # Style
     gem "autoprefixer-rails"
+    gem "tailwindcss-ruby"
     gem "tailwindcss-rails"
-    gem "cssbundling-rails"
+    # gem "cssbundling-rails"
 
     # Dev
     gem "hotwire-livereload"
@@ -89,9 +90,10 @@ after_bundle do
 
   # Bundling
   ########################################
-  run "bundle add cssbundling-rails"
+  # run "bundle add cssbundling-rails"
   run "bundle install"
-  run "rails css:install:tailwind"
+  run "rails tailwindcss:install"
+  # run "rails css:install:tailwind"
 
   # Procfile
   ########################################
