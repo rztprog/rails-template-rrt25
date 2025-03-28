@@ -102,6 +102,7 @@ after_bundle do
   run "touch 'Procfile.dev'"
   run "echo 'web: bin/rails server -b 0.0.0.0 -p 3000' > Procfile.dev"
   run "echo 'css: bin/rails tailwindcss:watch' >> Procfile.dev"
+  run "mv Procfile.dev Procfile"
 
   # Routes
   ########################################
