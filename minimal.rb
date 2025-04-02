@@ -119,6 +119,10 @@ after_bundle do
     *.swp
     .DS_Store
   TXT
+  
+  # Gitignore
+  ########################################
+  run "mkdir app/views/shared"
 
   # Javascript NPM Importmap
   ########################################
