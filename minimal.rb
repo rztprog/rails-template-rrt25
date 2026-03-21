@@ -1,4 +1,4 @@
-# Rztprog Rails Template 2025 - RRT25
+# Rztprog Rails Template 2026 - rrt26
 # This boilerplate/template is inspired by https://raw.githubusercontent.com/lewagon/rails-templates/master/minimal.rb
 ########################################
 
@@ -14,22 +14,20 @@ inject_into_file "Gemfile", before: "group :development, :test do" do
   <<~RUBY
     # Style
     gem "autoprefixer-rails"
-    gem "tailwindcss-ruby"
     gem "tailwindcss-rails"
-    # gem "cssbundling-rails"
 
     # Dev
     gem "hotwire-livereload"
     gem "foreman"
 
-    # Tools
-    gem 'faker'
-
   RUBY
 end
 
 inject_into_file "Gemfile", after: "group :development, :test do" do
-  "\n  gem \"dotenv-rails\""
+  <<~RUBY
+    gem "dotenv-rails"
+    gem "faker"
+  RUBY
 end
 
 # Assets
@@ -37,9 +35,9 @@ end
 ## Add stylesheets template
 run "rm -rf app/assets/stylesheets"
 run "rm -rf vendor"
-run "curl -L https://github.com/rztprog/rails-template-rrt25/raw/refs/heads/main/rails-rrt25-stylesheets-master.zip > stylesheets.zip"
-run "unzip stylesheets.zip -d app/assets && rm -f stylesheets.zip && rm -f app/assets/rails-rrt25-stylesheets-master/README.md"
-run "mv app/assets/rails-rrt25-stylesheets-master app/assets/stylesheets"
+run "curl -L https://github.com/rztprog/rails-template-rrt26/raw/refs/heads/main/rails-rrt26-stylesheets-master.zip > stylesheets.zip"
+run "unzip stylesheets.zip -d app/assets && rm -f stylesheets.zip && rm -f app/assets/rails-rrt26-stylesheets-master/README.md"
+run "mv app/assets/rails-rrt26-stylesheets-master app/assets/stylesheets"
 
 # Layout
 ########################################
@@ -53,7 +51,7 @@ gsub_file(
 # README
 ########################################
 markdown_file_content = <<~MARKDOWN
-  Rails app generated with [rztprog/rails-template-rrt25](https://github.com/rztprog/rails-template-rrt25), inspired by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+  Rails app generated with [rztprog/rails-template-rrt26](https://github.com/rztprog/rails-template-rrt26), inspired by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 MARKDOWN
 file "README.md", markdown_file_content, force: true
 
@@ -90,10 +88,8 @@ after_bundle do
 
   # Bundling
   ########################################
-  # run "bundle add cssbundling-rails"
   run "bundle install"
   run "rails tailwindcss:install"
-  # run "rails css:install:tailwind"
 
   # Procfile
   ########################################
@@ -126,29 +122,7 @@ after_bundle do
 
   # Javascript NPM Importmap
   ########################################
-  ## For reference purpose
-  # append_file "config/importmap.rb", <<~RUBY
-  #   pin "bootstrap", to: "bootstrap.min.js", preload: true
-  #   pin "@popperjs/core", to: "popper.js", preload: true
-  # RUBY
 
-  # append_file "config/initializers/assets.rb", <<~RUBY
-  #   Rails.application.config.assets.precompile += %w(bootstrap.min.js popper.js)
-  # RUBY
-
-  # append_file "app/javascript/application.js", <<~JS
-  #   import "@popperjs/core"
-  #   import "bootstrap"
-  # JS
-
-
-  # append_file "app/assets/config/manifest.js", <<~JS
-  #   //= link popper.js
-  #   //= link bootstrap.min.js
-  # JS
-
-  # Heroku
-  # run "bundle lock --add-platform x86_64-linux"
 
   # Dotenv
   ########################################
@@ -162,19 +136,19 @@ after_bundle do
   ########################################
   git :init
   git add: "."
-  git commit: "-m 'Initial commit with rztprog rails template 2025 - rrt25'"
+  git commit: "-m 'Initial commit with rztprog rails template 2026 - rrt26'"
   
   # Final message
   ########################################
-  puts "*************************************"
+  puts "***************************"
   puts " "
   puts " "
-  puts "   🎉 RRT25 Configuration is complete! 🎉"
+  puts "   🎉 RRT26 Configuration is complete! 🎉"
   puts " "
   puts "   To start the server and Tailwind watcher, run:"
   puts "          foreman start or bin/dev"
   puts " "
   puts "          Enjoy building your app! 🚀"
   puts " "
-  puts "*************************************"
+  puts "***************************"
 end
