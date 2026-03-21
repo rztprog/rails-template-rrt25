@@ -1,24 +1,25 @@
-# Rztprog Rails Template 2025 - RRT25 🚀
+# <p align='center'>Rztprog Rails Template 2026 - RRT25 🚀</p>
+## <p align='center'>Last updated : 2026 / 03 / 21</p>
 
-Welcome to the **Rztprog Rails Template 2025 (RRT25)**, a Rails starter template optimized for a modern workflow, integrating TailwindCSS, Hotwire, and productivity tools.
+Welcome to the **Rztprog Rails Template 2026 (RRT26)**, a Rails starter template optimized for a modern workflow, integrating TailwindCSS, Hotwire, and productivity tools.
 
 ## Prerequisites 🛠️
 
-Before starting, make sure you have the following installed:
+Tested with :
 
-- **Ruby** version >= 3.0
-- **Rails** version >= 7.1
+- **Ruby** version >= 3.4.9
+- **Rails** version >= 8.1.2
 - **PostgreSQL** for the database
 - **Git** for version control
 
 ## Installation 📥
 
-1. **Create your new Rails application with this template:**
+1. **Create your new Rails application in terminal with this template :**
 
 ```bash
 rails new \
   -d postgresql \
-  -m https://raw.githubusercontent.com/rztprog/rails-template-rrt25/refs/heads/main/minimal.rb \
+  -m https://raw.githubusercontent.com/rztprog/rails-template-rrt26/refs/heads/main/minimal.rb \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
 
