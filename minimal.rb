@@ -36,7 +36,7 @@ end
 run "rm -rf app/assets/stylesheets"
 run "rm -rf vendor"
 run "curl -L https://github.com/rztprog/rails-template-rrt26/raw/refs/heads/main/rails-rrt26-stylesheets-master.zip > stylesheets.zip"
-run "unzip stylesheets.zip -d app/assets"
+run "unzip stylesheets.zip -d app/assets && rm -f stylesheets.zip && rm -f app/assets/rails-rrt26-stylesheets-master/README.md"
 run "mv app/assets/rails-rrt26-stylesheets-master app/assets/stylesheets"
 
 # Layout
