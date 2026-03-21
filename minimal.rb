@@ -15,11 +15,6 @@ inject_into_file "Gemfile", before: "group :development, :test do" do
     # Style
     gem "autoprefixer-rails"
     gem "tailwindcss-rails"
-
-    # Dev
-    gem "hotwire-livereload"
-    gem "foreman"
-
   RUBY
 end
 
@@ -27,6 +22,8 @@ inject_into_file "Gemfile", after: "group :development, :test do\n" do
   <<~RUBY
     gem "dotenv-rails"
     gem "faker"
+    gem "foreman"
+    gem "hotwire-livereload"
   RUBY
 end
 
